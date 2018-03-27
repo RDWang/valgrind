@@ -5,7 +5,8 @@ PWD=`pwd`
 SCRIPTE_PATH=${PWD}
 
 #交叉编译配置
-cd valgrind-3.13.0
+cd valgrind-src
+./autogen.sh
 ./configure --host=arm-linux-gnueabihf CC=arm-linux-gnueabihf-gcc CPP=arm-linux-gnueabihf-cpp CXX=arm-linux-gnueabihf-g++ --prefix=/tmp/target
 make 
 make install
